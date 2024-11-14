@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=S, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>gaybriel</title>
+
 </head>
 <body align="center">
     
     <form class="fundo" action="" method="post">
 
-        <h1>Login</h1>
+        <h1>Logi</h1>
         <label for="">Usuário:</label>
         <input type="text" name='txtusuario' >
 <br><br>
