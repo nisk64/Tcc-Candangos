@@ -8,7 +8,9 @@
 <body>
     <div class="cabecalho"> <!-- classe para cabeçalho do site -->
         <div>
-            <p></p>
+            <p>Home <a href="pagina1.php"></a> </p>
+            <p>Pacientes</p>
+            <p>Agenda</p>
         </div>
     </div>
 </body>

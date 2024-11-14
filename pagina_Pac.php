@@ -1,17 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Care</title>
+    <title>Pacientes</title>
 </head>
-<body <!-- align="center" -->>
+<body>
     
-
-    <?php
-        echo 'Olá "txtuusuario"';
-    ?>
-
-
 </body>
 </html>
