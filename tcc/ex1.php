@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=S, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <title>gaybriel</title>
+    <title>Login</title>
 
 </head>
 <body align="center">
