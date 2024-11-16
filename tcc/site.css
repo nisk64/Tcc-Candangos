@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(118, 111, 111);
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 1px solid #000;
+    padding: 10px;
+    background-color: rgba(15, 183, 212, 0.5) ;
+    text-decoration: none;
+}
+
+.cadastro{
+    border-top: 5px solid blue;
+    border-bottom: 5px solid blue;
+}
+
+.label{
+    text-align: left;
+}
+
+.input{
+    text-align: center;
+}

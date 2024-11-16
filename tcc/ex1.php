@@ -10,10 +10,11 @@
 <body align="center">
     
     
+    <div class="borda_login">
+ <form class="fundo" action="" method="post">
 
-    <form class="fundo" action="" method="post">
-
-        <h1>Logi</h1>
+    
+        <h1>Login</h1>
         <label for="">Usuário:</label>
         <input type="text" name='txtusuario' >
 <br><br>
@@ -23,9 +24,12 @@
         <button type="submit" name='chacar.php'>Logar</button>
         <button type="reset">Limpar</button> <br><br>
 
-        <p>Caso não possua <a href="cadastro.php">cadastro</a></p>
+        <h3>Caso não possua <a href="cadastro.php">cadastro</a></h3>
     </form>
 
+    </div>
+
+   
 
 <?php
     // Inicia a sessão
