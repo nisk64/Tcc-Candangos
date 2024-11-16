@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(118, 111, 111);
+    background-color: rgb(252, 252, 252);
 }
 
 .cabecalho{
@@ -15,12 +15,4 @@ body{
 .cadastro{
     border-top: 5px solid blue;
     border-bottom: 5px solid blue;
-}
-
-.label{
-    text-align: left;
-}
-
-.input{
-    text-align: center;
 }
