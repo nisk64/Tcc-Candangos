@@ -1,6 +1,6 @@
 /* Estilo geral */
 body {
-  background-color: rgb(209, 209, 209);
+  background-color: rgb(249, 244, 244);
   font-family: Arial, sans-serif;
  
 }
@@ -8,12 +8,19 @@ body {
 /* Cabeçalho */
 .cabecalho {
   display: flex;
+  justify-content: flex-end;
+  font-size: 18px;
   justify-content: space-evenly;
   border: 1px solid #000;
   padding: 10px;
   background-color: rgba(15, 183, 212, 0.5);
-  margin-top: 0px;
-  margin-left: 0px;
+  margin-top: 0%;
+  margin-left: 0%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-width: 0px;
+  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 
 /* Formulário */
@@ -25,6 +32,7 @@ body {
 h1 {
   color: #333;
   margin-bottom: 20px;
+  font-size: 20px;
 }
 
 /* Alinhamento de pares de label e input */
@@ -67,4 +75,12 @@ a{ /* ta tirando a linhasublinha do link e mudando  a cor */
 a:houver{
   text-decoration: underline;
   color: aquamarine;
+}
+
+.PacienteCad{
+  background-color: #625c5c;
+  height: 500px;
+  border-radius: 5%;
+  margin-right: 0px;
+ 
 }

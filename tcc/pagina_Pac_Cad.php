@@ -9,10 +9,10 @@
 <body align="center">
 
     <div class="cabecalho"> <!-- classe para cabeçalho do site -->
-            <h2><a href="pagina1.php">Home</a></h2> 
             <h2><a href="pagina_Pac.php">Meus Pacientes</a></h2>
             <h2><a href="pagina_Agenda.php">Agenda</a></h2> 
             <h2><a href="pagina_Pac_Cad.php">Cadastrar Pacientes</a></h2> 
+    </div>
     </div>
 
 
@@ -23,8 +23,9 @@
 
 
     <form action="" method="post">        
-        <!-- Estrutura de pares com .Informacoes -->
-        <div class="Informacoes">
+      <div class="PacienteCad">
+        <br><br>
+      <div class="Informacoes">
             <label for="nome">Nome Paciente:</label>
             <input type="text" id="nome" placeholder="Digite o nome" name="txtNome">
         </div>
@@ -32,11 +33,6 @@
         <div class="Informacoes">
             <label for="nascimento">Data de Nascimento:</label>
             <input type="date" id="nascimento" name="txtNasci">
-        </div>
-
-        <div class="Informacoes">
-            <label for="id">ID Paciente:</label>
-            <input type="tel" id="id" placeholder="Digite o ID" name="txtID">
         </div>
 
         <div class="Informacoes">
@@ -51,7 +47,7 @@
 
         <div class="Informacoes">
             <label for="telefone">Telefone:</label>
-            <input type="number" id="telefone" placeholder="(XX) XXXXX-XXXX" required name="txtTelefone">
+            <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" required name="txtTelefone">
         </div>
 
         <div class="Informacoes">
@@ -60,24 +56,71 @@
         </div>
     </form>
 
-    <button type="submit">Cadastrar</button>
-    <button type="reset"><a href="pagina_Pac_Cad.php">Limpar</a></button>
+    <button type="submit" name='btnCad'>Cadastrar</button>
+    <button type="reset" ><a href="pagina_Pac_Cad.php">Limpar</a></button> <br><br>
 </div>
 
+      </div>   
 
 
-    <!--  <?php
-    
-    session_start();
+      <?php
+session_start();
 
-    $Nome = $_POST ['txtNome'];
-    $Nascimento = $_POST ['txtNasci'];
-    $ID = ['txtID'];
-    $Comorbidades = $_POST ['txtComorbi'];
-    $Endereco = $_POST ['txtEndereco'];
-    $Telefone = $_POST ['txtTelefone'];
-    $OBS = $_POST ['txtObs'];
-    ?>  -->
+// Configuração do banco de dados
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname = "cadastrarpac";
+
+// Cria a conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verifica a conexão
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+// Verifica se o formulário foi enviado via POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Recebe os dados do formulário
+    $Nome = $_POST['txtNome'];
+    $Nascimento = $_POST['txtNasci'];
+    $Comorbidades = $_POST['txtComorbi'];
+    $Endereco = $_POST['txtEndereco'];
+    $Telefone = $_POST['txtTelefone'];
+    $OBS = $_POST['txtObs'];
+
+    // Verifica se o botão foi clicado
+    if (isset($_POST['btnCad'])) {
+        // Cria a query para inserir os dados na tabela (por exemplo, `pacientes`)
+        $sql = "INSERT INTO tblpaciente (pacNome, pacNascimento, idPaciente, pacComorbidades, pacEndereco, pacTelefone, pacObs) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        // Prepara a query
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssssss", $Nome, $Nascimento, $ID, $Comorbidades, $Endereco, $Telefone, $OBS);
+
+        // Executa a query
+        if ($stmt->execute()) {
+            echo "<script> 
+                    alert('Paciente cadastrado');
+                    window.location.href = 'pagina_Pac_cad.php'; 
+                  </script>"; /* mensagem na tela */
+        } else {
+            echo "Erro ao cadastrar: " . $stmt->error;
+        }
+
+        // Fecha o statement
+        $stmt->close();
+    } else {
+        echo 'Erro: o botão de cadastro não foi acionado.';
+    }
+}
+
+   
+    $conn->close();
+    ?>
 
 </body>
+
 </html>

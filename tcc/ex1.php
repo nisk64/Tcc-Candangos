@@ -73,11 +73,11 @@
             // Exibe um uma mensagem de boas vindas com o nome do usuário e leva para a página inicial do site
             echo "<script>
                     alert('Bem-vindo, " . htmlspecialchars($usuario) . "!');
-                    window.location.href = 'pagina1.php'; // Redireciona para a página1
+                    window.location.href = 'pagina1.php'; 
                   </script>";
         } else {
             // Se não encontrar nenhum usuário ou se houve erro
-            echo 'Erro nas informações cadastrais.';
+            echo '<h3>Erro nas informações cadastrais.</h3>';
         }
         
     }
